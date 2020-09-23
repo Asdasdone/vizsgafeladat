@@ -3,15 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace vizsgafeladat
 {
     class Program
     {
+        static void beolvas()
+        {
+            StreamReader ol = new StreamReader("raktar.csv");
+            while (!ol.EndOfStream)
+            {
+                string[] sor = ol.ReadLine().Split(';');
+                Console.WriteLine(sor[0]);
+            }
+            ol.Close();
+        }
         static void Main(string[] args)
         {
-            termek t = new termek("p0","polo_2xl",1499,10);
-            
+
+            beolvas(); 
             Console.ReadKey();
             
         }
