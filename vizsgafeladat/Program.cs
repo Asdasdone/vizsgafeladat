@@ -10,6 +10,10 @@ namespace vizsgafeladat
     {
         static void Main(string[] args)
         {
+            termek t = new termek("p0","polo_2xl",1499,10);
+            
+            Console.ReadKey();
+            
         }
     }
 }
