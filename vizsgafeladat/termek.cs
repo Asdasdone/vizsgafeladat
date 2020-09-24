@@ -40,11 +40,36 @@ namespace vizsgafeladat
 		public termek(string kod, string nev,int ar,int db)
 		{
 			this.kod = kod;
-			this.nev = nev;
+			this.nev = alakit(nev);
 			this.ar = ar;
 			this.db = db;
 		}
+		private string alakit(string szo)
+		{
+			string tmp = "";
+			string ekezet = "áéőúóüöűí";
+			string nemek = "aeouououi";
+			string a = szo;
 
+
+			for (int i = 0; i < a.Length; i++)
+			{
+				int hol = ekezet.IndexOf(a[i]);
+				if (hol != -1)
+				{
+
+					tmp += nemek[hol];
+				}
+				else
+				{
+					tmp += a[i];
+				}
+			}
+
+
+
+			return tmp;
+		}
 
 	}
 }

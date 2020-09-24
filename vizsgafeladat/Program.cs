@@ -16,8 +16,8 @@ namespace vizsgafeladat
             while (!ol.EndOfStream)
             {
                 string[] sor = ol.ReadLine().Split(';');
-                termek sed = new termek(sor[0],sor[1],int.Parse(sor[2]),int.Parse(sor[3]));
-                l.Add(sed);
+                
+                l.Add(new termek(sor[0], sor[1], int.Parse(sor[2]), int.Parse(sor[3])));
 
             }
             ol.Close();
@@ -25,8 +25,13 @@ namespace vizsgafeladat
         static void Main(string[] args)
         {
 
-            beolvas();
-            Console.WriteLine(l[0].KOD);
+             beolvas();
+             for (int i = 0; i < l.Count; i++)
+             {
+                 Console.WriteLine($"{l[i].KOD},{l[i].NEV},{l[i].AR},{l[i].DB}");
+             }
+
+            
             Console.ReadKey();
             
         }
