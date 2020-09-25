@@ -52,6 +52,40 @@ namespace vizsgafeladat
                 Console.WriteLine(item.KOD+";"+item.DB);
             }
         }
+        private int osszeg;
+
+        public int OSSZEG
+        {
+            get { return osszeg; }
+            set { osszeg = value; }
+        }
+        public void ossz(List<termek> termeks)
+        {
+            int szum=0;
+            for (int i = 0; i < termeks.Count; i++)
+            {
+                int ar = are(asd[i].KOD,termeks);
+                szum += ar * asd[i].DB;
+            }
+
+        }
+        public int are(string kod,List<termek>termeks)
+        {
+            int i = 0;
+            while (kod!=termeks[i].KOD)// && i<termeks.Count)
+            {
+                i++;
+            }
+            //if (i<termeks.Count)
+            //{
+                return termeks[i].AR;
+            //}
+            //else
+            //{
+              //  return -1;
+            //}
+           
+        }
 
 
         public rendeles(string tipus,string datum,string sorszam,string email)

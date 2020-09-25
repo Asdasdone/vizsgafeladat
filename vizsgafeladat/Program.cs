@@ -44,6 +44,10 @@ namespace vizsgafeladat
                 
 
             }
+            foreach (var item in rend)
+            {
+                //item.ossz();
+            }
             ol.Close();
             
         }
