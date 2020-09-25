@@ -36,6 +36,7 @@ namespace vizsgafeladat
 			get { return ar; }
 			set { ar = value; }
 		}
+		
 
 		public termek(string kod, string nev,int ar,int db)
 		{

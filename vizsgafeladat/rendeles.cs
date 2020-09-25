@@ -30,7 +30,8 @@ namespace vizsgafeladat
             get { return sorszam; }
             set { sorszam = value; }
         }
-        
+
+        private List<tetel> asd;
 
         public string EMAIL
         {
@@ -38,7 +39,19 @@ namespace vizsgafeladat
             set { email = value; }
         }
 
+        public void tetelad(string a,int b)
+        {
+            tetel sed = new tetel(a,b);
+            asd.Add(sed);
 
+        }
+        public void kiir()
+        {
+            foreach (var item in asd)
+            {
+                Console.WriteLine(item.KOD+";"+item.DB);
+            }
+        }
 
 
         public rendeles(string tipus,string datum,string sorszam,string email)
@@ -47,6 +60,7 @@ namespace vizsgafeladat
             this.datum = datum;
             this.sorszam = sorszam;
             this.email = email;
+            asd = new List<tetel>();
         }
     }
 }

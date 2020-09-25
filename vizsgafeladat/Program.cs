@@ -28,17 +28,24 @@ namespace vizsgafeladat
             StreamReader ol = new StreamReader("rendeles.csv");
             while (!ol.EndOfStream)
             {
-                string[] sor = ol.ReadLine().Split(';');
+                string sor = ol.ReadLine();
+                string[] ads = sor.Split(';');
+                
 
-                if (sor[0] == "M")
+                if (ads[0]=="M")
                 {
-                    rend.Add(new rendeles(sor[0], sor[1], sor[2], sor[3]));
+                   rend.Add(new rendeles(ads[0], ads[1], ads[2], ads[3])); 
+                }
+                else
+                {
+                    rend[rend.Count - 1].tetelad(ads[2],int.Parse(ads[3]));
                 }
 
                 
 
             }
             ol.Close();
+            
         }
         static void Main(string[] args)
         {
@@ -51,7 +58,8 @@ namespace vizsgafeladat
             rendelol();
             for (int i = 0; i < l.Count; i++)
             {
-                Console.WriteLine($"{rend[i].DATUM},{rend[i].SORSZAM},{rend[i].EMAIL}");
+                Console.WriteLine($"{rend[i].DATUM};{rend[i].SORSZAM};{rend[i].EMAIL}");
+                rend[i].kiir();
             }
             Console.ReadKey();
             
